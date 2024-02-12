@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Customer.master.cs" Inherits="Customer_Customer" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>E-Mandi</title>
+   <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<form id="form1" runat="server">
+<div class="main">
+    <div class="page">
+        <div class="header">
+            <h1>E-Mandi</h1>
+        </div>
+    <div class="topmenu">
+        <ul>
+            <li><a href="Home.aspx">Home</a></li>
+            <li><a href="BrowseProducts.aspx">Browse Products</a></li>
+            <li><a href="MyCart.aspx">Cart</a></li>
+            <li><a href="MyOrder.aspx">Orders</a></li>
+            <li><a href="CancelOrder.aspx">Cancel Order</a></li>
+            <li><a href="Logout.aspx">Logout</a></li>
+    
+        </ul>
+    </div>
+<div class="content">
+    <div class="left-panel">
+        <div class="left-panel-in">
+            
+            
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder> 
+           
+        </div>
+    </div>
+
+<div class="right-panel">
+    <div class="right-row1">
+            <h3 class="subtitle">Category</h3>
+            <p>&nbsp;</p>
+            <p class="green">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                    ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+                    SelectCommand="SELECT [categoryname], [cimg], [categoryid] FROM [Category]">
+                </asp:SqlDataSource>
+                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" 
+                    RepeatColumns="2" HorizontalAlign="Left" RepeatDirection="Horizontal" 
+                    Width="99%" >
+                    <ItemTemplate>
+                        
+                       <a href='ProductsInCategory.aspx?cid=<%#Eval("categoryid") %>'> <asp:Label ID="categorynameLabel" runat="server" Text='<%# Eval("categoryname") %>' Font-Bold="True"  /></a>
+                       
+                       
+                        <a href='ProductsInCategory.aspx?cid=<%#Eval("categoryid") %>'><asp:Image ID="cimg1" runat="server" ImageUrl='<%# Eval("cimg") %>' Width="101px" Height="100px" ImageAlign="Middle" /></a>
+                        
+
+                    </ItemTemplate>
+                </asp:DataList>
+            
+            
+            </p>
+            <p>
+                &nbsp;</p>
+
+           
+           
+    </div>
+
+</div>
+</div>
+    <div class="footer">
+        <p>&copy; Copyright 2022. All Rights Reserved. &nbsp; <a class="footer-link"  target="_blank" href="http://www.emandi-bh.com/">E-Mandi</a>
+        </p>
+    </div>
+</div>
+</div>
+  </form>
+</body>
+</html>

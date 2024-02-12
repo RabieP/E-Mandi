@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs" Inherits="MainMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html>
+<html>
+<head>
+   <title>E-Mandi</title>
+   <link href="css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+<div class="main">
+    <div class="page">
+        <div class="header">
+            <h1>E-Mandi</h1>
+        </div>
+    <div class="topmenu">
+        <ul>
+            <li><a href="HomePaget.aspx">Home</a></li>
+
+            <li>    <div class="dropdown">
+                    <a class="dropbtn">User</a>
+                    <div class="dropdown-content">
+                        <a href="CustomerLogin.aspx">Customer</a>
+                        <a href="FarmerLogin.aspx">Farmer</a>
+                        <a href="AdminLogin.aspx">Admin</a>
+                    </div></div>
+            </li>
+
+           
+            <li><a href="AboutUS.aspx">About Us</a></li>
+            <li><a href="ContactUS.aspx">Contact Us</a></li>
+  
+        </ul>
+    </div>
+<div class="content">
+    <div class="left-panel">
+        <div class="left-panel-in">
+            
+            <p>&nbsp;</p>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder> 
+            <p>&nbsp;</p>
+        </div>
+    </div>
+
+<div class="right-panel">
+    <div class="right-row1">
+        <h3 class="subtitle">Category</h3>
+            <p>&nbsp;</p>
+            <p class="green">
+                
+               
+            
+            
+                <asp:Image ID="Image1" runat="server" Height="150px" 
+                    ImageUrl="~/images/root_veg.jpg" Width="94%" />
+
+               <asp:Image ID="Image3" runat="server" Height="150px" 
+    ImageUrl="~/images/vegetable.png" Width="94%" />
+
+            
+            
+                <asp:Image ID="Image2" runat="server" Height="150px" 
+    ImageUrl="~/images/leafy_veg.jpg" Width="94%" />
+
+            
+            
+            </p>
+            <p>
+                &nbsp;</p>
+
+           
+    </div>
+
+</div>
+</div>
+    <div class="footer">
+        <p>&copy; Copyright 2022. All Rights Reserved. &nbsp; <a class="footer-link"  target="_blank" href="http://www.emandi-bh.com/">E-Mandi</a>
+        </p>
+    </div>
+</div>
+</div>
+    </form>
+</body>
+</html>
